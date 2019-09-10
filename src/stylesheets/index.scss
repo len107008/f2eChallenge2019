@@ -1,0 +1,129 @@
+
+// css reset 
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+//variables
+
+$light-bg-color: #F4F6F3;
+$light-header-color: #EFF4EC;
+$light-button-color: #6A855A;
+$light-text-color: rgba(0, 0, 0, 0.5);
+$dark-text-color: #204326;
+
+$menuBtn-color: rgba(0, 0, 0, 0.3);
+$menuBtn-hover-color: rgba(0, 0, 0, 0.5);
+
+$dark-btn-color: #6A855A;
+$dark-btn-text: #FFFFFF;
+
+$sidenav-bg-color: #EFF4EC;
+$sidenav-text-color: #6A855A;
+$sidenav-btn-color: rgba(0, 0, 0, 0.5);
+
+
+//general config
+@import '_fonts.scss';
+@import '_icons.scss';
+
+// component
+
+.menu-btn {
+  color: $menuBtn-color;
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      color: $menuBtn-hover-color;
+    }
+  }
+}
+
+.round-btn {
+  width: 160px;
+  height: 52px;
+  border-radius: 26px;
+  background-color: $dark-btn-color;
+  color: $dark-btn-text;
+  text-align: center;
+  border: none;
+}
+
+
+// general layout
+
+body {
+  background-color: darken($light-bg-color, 10%);
+  padding-top: 10vh;
+}
+
+#wrap {
+  width: 375px;
+  height: 667px;
+  background-color: $light-bg-color;
+  margin: 0 auto;
+  position: relative;
+}
+
+#header {
+  width: 100%;
+  height: 60px;
+  background-color: $light-header-color;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+  a {
+    width: 55px;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+  }
+
+  a.hambergur.menu {
+    margin-right: auto;
+  }
+}
+
+
+
+#main-content {
+  padding-top: 34px;
+  text-align: center;
+  background-image: url('../../dist/image/bg-day.png');
+  background-size: cover;
+  height: 100%;
+  position: relative;
+
+
+  #content-header {
+    color: $dark-text-color;
+    margin-bottom: 14px;
+  }
+
+  #status {
+    color: $light-text-color;
+  }
+
+  #add-note {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+
+#sidenav {
+  width: 268px;
+  height: 100%;
+  background-color: $sidenav-bg-color;
+  color: $sidenav-text-color;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}

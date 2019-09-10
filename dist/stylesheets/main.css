@@ -1,0 +1,127 @@
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+TC|Noto+Serif+TC&display=swap&subset=chinese-traditional);
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6, .font-NotoSans {
+  font-family: 'Noto Sans TC', sans-serif; }
+
+ul, li, p, a, span, .font-NotoSerif {
+  font-family: 'Noto Serif TC', serif; }
+
+h2 {
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 1.8px;
+  font-weight: 300; }
+
+p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1.4px; }
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga'; }
+
+.material-icons:before {
+  position: relative; }
+
+.view-list:before {
+  content: 'view_list'; }
+
+.view-module:before {
+  content: 'view_module'; }
+
+.menu:before {
+  content: 'menu'; }
+
+.menu-btn {
+  color: rgba(0, 0, 0, 0.3); }
+  @media (hover: hover) {
+    .menu-btn:hover {
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.5); } }
+
+.round-btn {
+  width: 160px;
+  height: 52px;
+  border-radius: 26px;
+  background-color: #6A855A;
+  color: #FFFFFF;
+  text-align: center;
+  border: none; }
+
+body {
+  background-color: #d9e0d6;
+  padding-top: 10vh; }
+
+#wrap {
+  width: 375px;
+  height: 667px;
+  background-color: #F4F6F3;
+  margin: 0 auto;
+  position: relative; }
+
+#header {
+  width: 100%;
+  height: 60px;
+  background-color: #EFF4EC;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end; }
+  #header a {
+    width: 55px;
+    height: 100%;
+    line-height: 60px;
+    text-align: center; }
+  #header a.hambergur.menu {
+    margin-right: auto; }
+
+#main-content {
+  padding-top: 34px;
+  text-align: center;
+  background-image: url(../../dist/image/bg-day.png);
+  background-size: cover;
+  height: 100%;
+  position: relative; }
+  #main-content #content-header {
+    color: #204326;
+    margin-bottom: 14px; }
+  #main-content #status {
+    color: rgba(0, 0, 0, 0.5); }
+  #main-content #add-note {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%); }
+
+#sidenav {
+  width: 268px;
+  height: 100%;
+  background-color: #EFF4EC;
+  color: #6A855A;
+  position: absolute;
+  top: 0;
+  z-index: 10; }
+

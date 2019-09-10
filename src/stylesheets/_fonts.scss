@@ -1,0 +1,28 @@
+//import google fonts Noto Sans & Noto Serif
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC|Noto+Serif+TC&display=swap&subset=chinese-traditional');
+
+
+h1, h2, h3, h4, h5, h6, .font-NotoSans {
+  font-family: 'Noto Sans TC', sans-serif;
+ 
+}
+
+ul, li, p, a, span, .font-NotoSerif {
+  font-family: 'Noto Serif TC', serif;
+}
+
+h2 {
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 1.8px;
+  font-weight: 300;
+}
+
+p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1.4px;
+}
+  
+  
