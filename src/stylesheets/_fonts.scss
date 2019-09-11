@@ -19,10 +19,12 @@ h2 {
   font-weight: 300;
 }
 
-p {
+p, a {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 1.4px;
 }
-  
-  
+
+.fw-800, .fw-900:before {
+  font-weight: 900;
+}

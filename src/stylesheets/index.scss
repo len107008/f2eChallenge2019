@@ -5,6 +5,18 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  width: auto;
+  height: auto;
+}
+body {
+  height: 100vh;
+}
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 //variables
@@ -21,9 +33,7 @@ $menuBtn-hover-color: rgba(0, 0, 0, 0.5);
 $dark-btn-color: #6A855A;
 $dark-btn-text: #FFFFFF;
 
-$sidenav-bg-color: #EFF4EC;
-$sidenav-text-color: #6A855A;
-$sidenav-btn-color: rgba(0, 0, 0, 0.5);
+
 
 
 //general config
@@ -66,6 +76,7 @@ body {
   background-color: $light-bg-color;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
 }
 
 #header {
@@ -96,7 +107,7 @@ body {
   text-align: center;
   background-image: url('../../dist/image/bg-day.png');
   background-size: cover;
-  height: 100%;
+  height: calc(100% - 60px);
   position: relative;
 
 
@@ -114,16 +125,15 @@ body {
     bottom: 40px;
     left: 50%;
     transform: translate(-50%);
+    z-index: 999;
+    @media (hover: hover) {
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      }
+    }
   }
 }
 
 
-#sidenav {
-  width: 268px;
-  height: 100%;
-  background-color: $sidenav-bg-color;
-  color: $sidenav-text-color;
-  position: absolute;
-  top: 0;
-  z-index: 10;
-}
+@import '_sidenav.scss';

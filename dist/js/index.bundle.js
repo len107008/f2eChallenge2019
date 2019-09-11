@@ -94,7 +94,18 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _stylesheets_index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./stylesheets/index.scss */ \"./stylesheets/index.scss\");\n/* harmony import */ var _stylesheets_index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylesheets_index_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _stylesheets_index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./stylesheets/index.scss */ \"./stylesheets/index.scss\");\n/* harmony import */ var _stylesheets_index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_stylesheets_index_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _javascript_general_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./javascript/_general_layout */ \"./javascript/_general_layout.js\");\n/* harmony import */ var _javascript_general_layout__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_javascript_general_layout__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n//# sourceURL=webpack:///./index.js?");
+
+/***/ }),
+
+/***/ "./javascript/_general_layout.js":
+/*!***************************************!*\
+  !*** ./javascript/_general_layout.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("$(document).ready(function () {\n  $('#hambergur-btn').on('click', function () {\n    $('#wrap').toggleClass('menu-opend');\n  });\n  $('#close-sidenav-btn').on('click', function () {\n    $('#wrap').toggleClass('menu-opend');\n  });\n  var testData = {\n    title: '靈感隨手記',\n    marked: true,\n    content: '靈感總是說來就來，所以就隨手記一下'\n  };\n  var articleArray = [];\n  var article = {\n    title: '',\n    marked: false,\n    content: ''\n  };\n  articleArray.push(testData);\n  console.log(articleArray);\n  console.log(articleArray.length);\n\n  function makeArticleList() {\n    for (var i = 0; i < articleArray.length; i++) {\n      var articleTemplate = +\"<li>\\n        <h4>\".concat(articleArray[i].title, \"</h4>\\n        <p>\").concat(articleArray[i].content, \"</p>\\n      </li>\");\n    }\n\n    return articleTemplate;\n  }\n\n  var template = makeArticleList();\n  $('#main-content').append(template);\n});\n\n//# sourceURL=webpack:///./javascript/_general_layout.js?");
 
 /***/ }),
 

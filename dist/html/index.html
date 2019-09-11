@@ -16,7 +16,7 @@
 
   <div id="wrap">
     <div id="header">
-      <a class="hambergur material-icons menu menu-btn"></a>
+      <a id="hambergur-btn" class="hambergur material-icons menu menu-btn menu-open"></a>
       <a class="material-icons view-module menu-btn"></a>
       <a class="material-icons view-list menu-btn"></a>
     </div>
@@ -26,8 +26,20 @@
       <button id="add-note" class="round-btn">New Note</button>
     </div>
     <div id="sidenav" class="">
+      <a id="close-sidenav-btn" href="#" class="material-icons clear fw-900"></a>
+      <ul class="sidenav-list">
+        <li class="sidenav-item"><a href="#">所有筆記</a></li>
+        <li class="sidenav-item"><a href="#">已加星號</a></li>
+        <li class="sidenav-item"><a href="#">夜間模式</a></li>
+      </ul>
     </div>
   </div>
+
+  <!-- TOFIX: import jquery -->
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
   <script src="../js/index.bundle.js"></script>
 </body>
 
