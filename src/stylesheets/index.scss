@@ -133,7 +133,9 @@ body {
       }
     }
   }
+  @import '_notes-wall.scss';
 }
 
 
 @import '_sidenav.scss';
+@import '_note_index.scss';

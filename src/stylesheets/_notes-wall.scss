@@ -1,0 +1,60 @@
+$notes-wall-bg-color: transparent;
+$note-block-bg-color: #ffffff;
+$note-title-color: rgba(0, 0, 0, 0.5);
+$note-context-color: rgba(0, 0, 0, 0.3);
+$note-marked-color: #7B8A34;
+
+#notes-wall {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $notes-wall-bg-color;
+  flex-wrap: wrap;
+  padding: 34px 15px 0 15px;
+
+
+  .note-block {
+    width: 160px;
+    height: 160px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+    background-color: $note-block-bg-color;
+    padding: 20px 15px 10px 15px;
+    transition: translate ease .5s;
+    text-align: left;
+    position: relative;
+    @media (hover: hover) {
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        // transform: translate(-5px, -5px);
+        // transition: translate ease .5s;
+        
+        // border-radius: 15px;
+      }
+    }
+  }
+
+  .note-title {
+    font-size: 16px;
+    color: $note-title-color;
+    margin-bottom: 10px;
+
+  }
+  .note-context {
+    font-size: 13px;
+    color: $note-context-color;
+    font-weight: 600;
+  }
+  .star {
+    position: absolute;
+    top: 17px;
+    right: 14px;
+    color: $note-marked-color;
+    &:after {
+      font-size: 18px;
+    }
+  }
+}

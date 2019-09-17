@@ -48,3 +48,12 @@
 .clear:before {
   content: 'clear';
 }
+
+
+// define how note-block's star mark look like
+.star[data-marked=true]:after {
+  content: 'star';
+}
+.star[data-marked=false]:after {
+  content: 'star_border';
+}

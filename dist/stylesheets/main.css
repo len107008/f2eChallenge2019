@@ -72,6 +72,12 @@ p, a {
 .clear:before {
   content: 'clear'; }
 
+.star[data-marked=true]:after {
+  content: 'star'; }
+
+.star[data-marked=false]:after {
+  content: 'star_border'; }
+
 .menu-btn {
   color: rgba(0, 0, 0, 0.3); }
   @media (hover: hover) {
@@ -138,6 +144,44 @@ body {
       #main-content #add-note:hover {
         cursor: pointer;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); } }
+  #main-content #notes-wall {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: transparent;
+    flex-wrap: wrap;
+    padding: 34px 15px 0 15px; }
+    #main-content #notes-wall .note-block {
+      width: 160px;
+      height: 160px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+      padding: 20px 15px 10px 15px;
+      transition: translate ease .5s;
+      text-align: left;
+      position: relative; }
+      @media (hover: hover) {
+        #main-content #notes-wall .note-block:hover {
+          cursor: pointer;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); } }
+    #main-content #notes-wall .note-title {
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.5);
+      margin-bottom: 10px; }
+    #main-content #notes-wall .note-context {
+      font-size: 13px;
+      color: rgba(0, 0, 0, 0.3);
+      font-weight: 600; }
+    #main-content #notes-wall .star {
+      position: absolute;
+      top: 17px;
+      right: 14px;
+      color: #7B8A34; }
+      #main-content #notes-wall .star:after {
+        font-size: 18px; }
 
 #wrap.menu-opend #sidenav {
   transform: translateX(0); }
@@ -183,4 +227,8 @@ body {
       @media (hover: hover) {
         #sidenav .sidenav-list a:hover, #sidenav li a:hover {
           background-color: rgba(255, 255, 255, 0.7); } }
+
+#wrap.show-note #main-content {
+  transition: translate ease .3s;
+  transform: translateX(-100%); }
 
