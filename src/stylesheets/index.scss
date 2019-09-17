@@ -67,7 +67,7 @@ $dark-btn-text: #FFFFFF;
 
 body {
   background-color: darken($light-bg-color, 10%);
-  padding-top: 10vh;
+  padding-top: 5vh;
 }
 
 #wrap {
@@ -83,11 +83,18 @@ body {
   width: 100%;
   height: 60px;
   background-color: $light-header-color;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-
+  position: relative;
+  top: 0;
+  .container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 5;
+  }
   a {
     width: 55px;
     height: 100%;
@@ -103,20 +110,23 @@ body {
 
 
 #main-content {
-  padding-top: 34px;
   text-align: center;
-  background-image: url('../../dist/image/bg-day.png');
   background-size: cover;
   height: calc(100% - 60px);
   position: relative;
+  .container.mode-show {
+    padding-top: 34px;
+    transition: all ease .5s;
+    background-image: url('../../dist/image/bg-day.png');
+    height: 100%;
+  }
 
-
-  #content-header {
+  .content-header {
     color: $dark-text-color;
     margin-bottom: 14px;
   }
 
-  #status {
+  .status {
     color: $light-text-color;
   }
 
@@ -137,5 +147,12 @@ body {
 }
 
 
+// custom shortcut
+
+.display-none {
+  display: none !important;
+}
+
+
 @import '_sidenav.scss';
-@import '_note_index.scss';
+@import '_add_note_mode.scss';

@@ -1,59 +1,77 @@
+import { stringify } from "querystring";
+
 $(document).ready(function () {
 
-  $('#hambergur-btn').on('click', function () {
-    $('#wrap').toggleClass('menu-opend');
-  })
-  $('#close-sidenav-btn').on('click', function () {
-    $('#wrap').toggleClass('menu-opend');
-  })
-  var testData = {
-    title: '靈感隨手記',
-    marked: true,
-    content: '靈感總是說來就來，所以就隨手記一下~草當主題 花當主題 天空主題'
-  }
-  var notesList = [];
-  var note = {
-    title: '',
-    marked: false,
-    content: ''
-  }
- 
+  var noteBook = {
+    init: function() {
+      let me = this;
+      let notesList = JSON.parse(localStorage.getItem('localNoteBook')) || [];
+      let $addNoteBtn = $('#add-note');
 
-  notesList.push(testData);
-  notesList.push(testData);
+      let $hambergurBtn = $('#hambergur-btn');
+      let $closeSidenavBtn = $('#close-sidenav-btn');
 
-  var noteBlock = '';
+      $hambergurBtn.on('click', function () {
+        $('#wrap').toggleClass('menu-opend');
+      });
+      $closeSidenavBtn.on('click', function () {
+        $('#wrap').toggleClass('menu-opend');
+      });
 
-  function makeArticles(item) {
-    for(let i=0; i<item.length; i++){
-      console.log(item[i].title);
-      noteBlock = `
-      <li class="note-block" data-index="${i}">
-        <h4 class="note-title">${item[i].title}</h4>
-        <span class="material-icons star" data-marked="${item[i].marked}"></span>
-        <p class="note-context">${item[i].content}</p>
-      </li>`;
-      $('#notes-wall').append(noteBlock);
+      console.log('notesList', notesList);
+      me._updateData(notesList);
+      $addNoteBtn.on('click', me._addNote);
+
+    },
+    _updateData: function(item) {
+      let noteArray = item;
+      console.log(noteArray);
+      localStorage.setItem('localNoteBook', JSON.stringify(item));
+      for (let i=0; i<noteArray.length; i++) {
+        let mark = (noteArray[i].marked == 'true') ? true : false;
+        let template = `<li class="note-block" data-index="${i}">
+                          <h4 class="note-title">${ item[i].title }</h4>
+                          <span class="material-icons star" data-marked="${ mark }"></span>
+                          <p class="note-context">${ item[i].content }</p>
+                        </li>`;
+        $('#notes-wall').append(template);
+        console.log(noteArray[i]);
+      }
+
+    },
+    _addNote: function() {
+      console.log('ready');  
+      $('#wrap').addClass('add-note-mode');
+      let fakeData = { 
+        title: '靈感隨手記',
+        marked: true,
+        content: '靈感總是說來就來，所以就隨手記一下~草當主題 花當主題 天空主題'
+      }
+    
+      
+    },
+    _addsidenavBtnListener: function(item){
+      item.on('click', function() {
+        $('#wrap').toggleClass('menu-opened');
+      })
     }
   }
-
-  makeArticles(notesList);
-  console.log(noteBlock);
+  noteBook.init();
 
   // define how marked icons works on click
   
-  $('.material-icons.star').on('click', function(){
-    let marked = ($(this).attr('data-marked') == 'true') ? true: false;
-    let index = $(this).parent().attr('data-index');
-    marked = !marked;
-    $(this).attr('data-marked', marked);
-    notesList[index].marked = marked;
-    console.log('現在的狀態', notesList[index]);  
-  });
+  // $('.material-icons.star').on('click', function(){
+  //   let marked = ($(this).attr('data-marked') == 'true') ? true : false;
+  //   let index = $(this).parent().attr('data-index');
+  //   marked = !marked;
+  //   $(this).attr('data-marked', marked);
+  //   notesList[index].marked = marked;
+  //   console.log('現在的狀態', notesList[index]);  
+  // });
 
-  $('.note-block').on('click', function(){
-    $('#wrap').addClass('show-note');
-  })
+  // $('.note-block').on('click', function(){
+  //   $('#wrap').addClass('show-note');
+  // })
 
 
 

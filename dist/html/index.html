@@ -18,16 +18,29 @@
 
 
     <div id="header">
-      <a id="hambergur-btn" class="hambergur material-icons menu menu-btn menu-open"></a>
-      <a class="material-icons view-module menu-btn"></a>
-      <a class="material-icons view-list menu-btn"></a>
+      <div class="container mode-show">
+        <a id="hambergur-btn" class="hambergur material-icons menu menu-btn menu-open"></a>
+        <a class="material-icons view-module menu-btn"></a>
+        <a class="material-icons view-list menu-btn"></a>
+      </div>
+      <div class="container mode-add">
+         <a href="" class="material-icons preview-page"></a>
+      </div>
     </div>
+
     <div id="main-content">
-      <h2 id="content-header">所有筆記</h2>
-      <p id="status" class="font-NotoSans">這裡目前是空的</p>
-      <ul id="notes-wall"></ul>
-      <button id="add-note" class="round-btn">New Note</button>
+      <div class="container mode-show">
+        <h2 class="content-header">所有筆記</h2>
+        <p class="status font-NotoSans">這裡目前是空的</p>
+        <ul id="notes-wall"></ul>
+        <button id="add-note" class="round-btn">New Note</button>
+      </div>
+
+      <div class="container mode-add">
+        <form action=""></form>
+      </div>
     </div>
+    
     <div id="sidenav" class="">
       <a id="close-sidenav-btn" href="#" class="material-icons clear fw-900"></a>
       <ul class="sidenav-list">
@@ -36,15 +49,11 @@
         <li class="sidenav-item"><a href="#">夜間模式</a></li>
       </ul>
     </div>
-    
-    <div class="show-note-header">
 
-
-    </div>
 
   </div>
 
-  <!-- TOFIX: import jquery -->
+  <!-- TOFIX: import jquery by webpack -->
   <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

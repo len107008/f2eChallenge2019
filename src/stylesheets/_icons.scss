@@ -49,6 +49,10 @@
   content: 'clear';
 }
 
+.preview-page:before {
+  content: 'arrow_back_ios';
+}
+
 
 // define how note-block's star mark look like
 .star[data-marked=true]:after {
