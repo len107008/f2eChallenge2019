@@ -1,15 +1,15 @@
-import { stringify } from "querystring";
-
 $(document).ready(function () {
-
   var noteBook = {
     init: function() {
       let me = this;
-      let notesList = JSON.parse(localStorage.getItem('localNoteBook')) || [];
+      console.log(me);
+      me.notesList = JSON.parse(localStorage.getItem('localNoteBook')) || [];
+      console.log('notesList', me.notesList);
       let $addNoteBtn = $('#add-note');
-
       let $hambergurBtn = $('#hambergur-btn');
       let $closeSidenavBtn = $('#close-sidenav-btn');
+      let $previewPageBtn = $('#preview-btn');
+      let $submitNewnoteBtn = $('#submit-newnote');
 
       $hambergurBtn.on('click', function () {
         $('#wrap').toggleClass('menu-opend');
@@ -18,9 +18,18 @@ $(document).ready(function () {
         $('#wrap').toggleClass('menu-opend');
       });
 
-      console.log('notesList', notesList);
-      me._updateData(notesList);
-      $addNoteBtn.on('click', me._addNote);
+      $addNoteBtn.on('click', function() {
+        $('#wrap').toggleClass('add-note-mode');
+      })
+      $previewPageBtn.on('click', function(){
+        $('#wrap').toggleClass('add-note-mode');
+      })
+
+      console.log(me.notesList);
+
+
+      me._updateData(me.notesList);
+      $submitNewnoteBtn.on('click', me._addNote);
 
     },
     _updateData: function(item) {
@@ -40,15 +49,22 @@ $(document).ready(function () {
 
     },
     _addNote: function() {
-      console.log('ready');  
-      $('#wrap').addClass('add-note-mode');
-      let fakeData = { 
-        title: '靈感隨手記',
+      let getForm = $('#main-content .container.mode-add form');
+      let form = {
+        title: getForm.find('label[for=title] input').val(),
+        marked: false,
+        context: getForm.find('textarea').val()
+      }
+      
+      let testData = { 
+        title: '123',
         marked: true,
         content: '靈感總是說來就來，所以就隨手記一下~草當主題 花當主題 天空主題'
       }
-    
-      
+
+      form = testData;
+      (noteBook.notesList).push(form);
+      noteBook._updateData(noteBook.notesList);
     },
     _addsidenavBtnListener: function(item){
       item.on('click', function() {

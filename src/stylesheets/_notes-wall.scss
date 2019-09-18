@@ -8,12 +8,15 @@ $note-marked-color: #7B8A34;
   display: flex;
   width: 100%;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: $notes-wall-bg-color;
   flex-wrap: wrap;
+  align-content: space-between;
   padding: 34px 15px 0 15px;
-
+  height: 500px;
+  // overflow-y: scroll;
+  overflow: hidden;
 
   .note-block {
     width: 160px;
@@ -22,17 +25,15 @@ $note-marked-color: #7B8A34;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
     background-color: $note-block-bg-color;
     padding: 20px 15px 10px 15px;
+    margin-bottom: 16px;
     transition: translate ease .5s;
     text-align: left;
     position: relative;
+
     @media (hover: hover) {
       &:hover {
         cursor: pointer;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        // transform: translate(-5px, -5px);
-        // transition: translate ease .5s;
-        
-        // border-radius: 15px;
       }
     }
   }

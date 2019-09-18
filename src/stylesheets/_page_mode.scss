@@ -1,0 +1,56 @@
+// define each page's style on NORMAL MODE
+
+#wrap {
+  #header {
+    .container.mode-show {
+      transform: translateX(0);
+    }
+    .container.mode-add {
+      transform: translateX(100%);
+      justify-content: space-between;
+      font-weight: 900;
+      & a#submit-newnote {
+        letter-spacing: 0;
+        font-size: 20px;
+        padding-right: 18px;
+      }
+    }
+  }
+
+  #main-content {
+    .container.mode-show {
+      transform: translateX(0);
+      background-image: url('../../dist/image/bg-day.png');
+      padding-top: 34px;
+    }
+    .container.mode-add {
+      transform: translateX(100%);
+      position: absolute;
+      top: 0;
+      z-index: 5;
+      width: 375px;
+      height: 667px;
+    }
+  }
+}
+
+// define transiton style on page switch
+
+#wrap {
+  #main-content .container, #header .container {
+    transition: all ease .5s;
+  }
+}
+
+// define switch page position on ADD-NOTE-MODE
+#wrap.add-note-mode {
+
+  #main-content .container, #header .container {
+    &.mode-show {
+      transform: translateX(-100%);
+    }
+    &.mode-add  {
+      transform: translateX(0);
+    }
+  }
+}
