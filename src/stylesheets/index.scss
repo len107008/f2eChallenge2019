@@ -1,31 +1,3 @@
-
-// css reset 
-
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  width: auto;
-  height: auto;
-  border: none;
-}
-
-*:focus {
-  outline: none;
-  
-}
-body {
-  height: 100vh;
-}
-
-ul {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-}
-
 //variables
 
 $light-bg-color: #F4F6F3;
@@ -40,7 +12,8 @@ $menuBtn-hover-color: rgba(0, 0, 0, 0.5);
 $dark-btn-color: #6A855A;
 $dark-btn-text: #FFFFFF;
 
-
+//import normalize.css by webpack
+@import './reset';
 
 
 //general config

@@ -1,0 +1,39 @@
+// css custom reset 
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  border: none;
+}
+
+*:focus {
+  outline: none;
+  
+}
+
+body {
+  height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+// for chrome input autocomplete styles
+
+input -internal-autofill-selected,
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active {
+  background-color: transparent !important;
+  box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 1) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

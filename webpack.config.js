@@ -21,12 +21,13 @@ module.exports = {
           }
         },
       {
-        test: /\.scss$/,
+        test: /\.s|css$/,
         use: [
           {
           loader: MiniCssExtractPlugin.loader
         }, //後
           'css-loader', //次
+          'postcss-loader',
           'sass-loader' //先
         ]
       },
